@@ -1,8 +1,8 @@
 {
-  "name": "@osmiumtech/hooks-react",
-  "version": "0.0.1",
+  "name": "@dwidge/hooks-react",
+  "version": "0.0.34",
   "description": "A set of React hooks for various asynchronous and state management features.",
-  "repository": "github:osmiumtech/hooks-react",
+  "repository": "github:dwidge/hooks-react",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -18,16 +18,20 @@
     "src"
   ],
   "scripts": {
-    "prepare": "rimraf dist && ncp assets/ dist/ && tsc && tsc --project tsconfig.esm.json",
-    "test": "node --test"
+    "prepare": "rimraf dist && ncp assets/ dist/ && tsc -b . tsconfig.cjs.json",
+    "test": "node --enable-source-maps --test --test-name-pattern"
   },
   "peerDependencies": {
-    "react": "^18.2"
+    "@dwidge/utils-js": "^0.0.26",
+    "react": "^19.0.0"
   },
   "devDependencies": {
+    "@dwidge/utils-js": "^0.0.26",
+    "@types/react": "~19.1.10",
     "ncp": "^2.0.0",
-    "rimraf": "^5.0.5",
-    "typescript": "^5.2.2"
+    "react": "19.1.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3"
   },
   "publishConfig": {
     "access": "public"
